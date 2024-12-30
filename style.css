@@ -1,0 +1,244 @@
+body{
+    margin: 0;
+    background-image: url("https://wallpapers.com/images/hd/dark-green-background-bwdmx8o37oy1x0cf.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styles */
+.card-container {
+    display: flex; /* Align children in a row horizontally */
+    justify-content: center; /* Center them horizontally */
+    align-items: center; /* Align them vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    perspective: 1000px; /* Add perspective to the parent container */
+    gap: 20px; /* Add space between cards */
+}
+
+.card-container > div {
+    display: flex;
+    flex-direction: column; /* Stack the cards and audio container vertically */
+    align-items: center; /* Center the items */
+    gap: 10px; /* Space between the card and the audio container */
+}
+  
+  /* Flip Card Styles */
+  .flip-card {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d; /* Allow children to be 3D */
+    transition: transform 1.75s; /* Smooth transition on hover */
+    cursor: pointer;
+}
+  
+.flip-card .front, 
+.flip-card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back when flipping */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid yellowgreen;
+    border-radius: 10px;
+    box-shadow: 10px 10px 50px greenyellow;
+}
+
+.flip-card .front p {
+    font-size: larger;
+    position: absolute;
+    bottom: 1px; /* Move the text 20px from the bottom */
+    left: 40%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Correct centering */
+}
+  
+.flip-card.king-solomon .front {
+    font-family: 'Times New Roman', Times, serif;
+    color: beige;
+    background-image: url("https://i.pinimg.com/originals/92/cd/4c/92cd4cee7cb6522851c5bef78ad2ec08.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: 5px 5px 5px beige;
+    text-align: left;
+}
+
+.flip-card.king-solomon .back {
+    background-color: whitesmoke;
+    transform: rotateY(180deg);
+}
+
+.flip-card.king-solomon .back p {
+    font-size: 19px;
+}
+
+.flip-card.king-solomon .back p b {
+    color: red;
+}
+
+.flip-card.darius-the-great .front{
+    font-family: 'Times New Roman', Times, serif;
+    color: beige;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/24/King_Darius_the_Great.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: 5px 5px 5px black;    
+}
+
+.flip-card.darius-the-great .front p{
+    font-size: 30px;
+    color: white;
+    bottom: 160px; /* Move the text 20px from the bottom */
+    left: 37%; /* Center the text horizontally */
+    transform: translateX(-50%); /* Correct centering */
+    text-align: left;
+}
+
+.flip-card.darius-the-great .back{
+    background-color: whitesmoke;
+    transform: rotateY(180deg);    
+}
+
+.flip-card.darius-the-great .back p{
+    font-size: 19px;
+}
+
+.flip-card.darius-the-great .back p b{
+    color: red;
+}
+
+.flip-card.jesus .front{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    background-image: url("https://img.freepik.com/premium-photo/jesus-portrait-ai-generated_268835-4897.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: 5px 5px 5px whitesmoke;    
+}
+
+.flip-card.jesus .front p{
+    font-size: 30px;
+    color: white;
+    bottom: 4px; /* Move the text 20px from the bottom */
+    left: 40%; /* Center the text horizontally */
+    transform: translateX(50%); /* Correct centering */
+    text-align: right;
+}
+
+.flip-card.jesus .back{
+    background-color: whitesmoke;
+    transform: rotateY(180deg);
+}
+
+.flip-card.jesus .back p{
+    font-size: 19px;
+}
+
+.flip-card.jesus .back p b{
+    color: red;
+}
+
+.flip-card:hover {
+    transform: rotateY(180deg); /* This is what triggers the flip */
+}
+
+.flip-card.risen-christ .front{
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cb795f8c-fd4f-45af-810b-83e940cf2a08/dfo3i35-ab7d4a97-92e8-4b67-a7c1-43dbfde2433b.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NiNzk1ZjhjLWZkNGYtNDVhZi04MTBiLTgzZTk0MGNmMmEwOFwvZGZvM2kzNS1hYjdkNGE5Ny05MmU4LTRiNjctYTdjMS00M2RiZmRlMjQzM2IuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.NBTVgt0FG024INNisVDjOcGTAXUx3o00Vs6opmdY6B8");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: 5px 5px 5px whitesmoke;
+}
+
+.flip-card.risen-christ .front p{
+    font-size: 30px;
+    color: white;
+    bottom: 175px; /* Move the text 20px from the bottom */
+    left: 45%; /* Center the text horizontally */
+    transform: translateX(-25px); /* Correct centering */
+    text-align: right;
+}
+
+.flip-card.risen-christ .back{
+    background-color: whitesmoke;
+    transform: rotateY(180deg);
+}
+
+.flip-card.risen-christ .back p{
+    font-size: 19px;
+}
+
+.flip-card.risen-christ .back p b{
+    color: red;
+}
+
+@media screen and (max-width: 768px) {
+    /* Stack cards vertically with padding around the edges */
+    .card-container {
+        flex-direction: column; /* Stack the cards vertically */
+        gap: 20px; /* Gap between cards */
+        padding: 20px; /* Add padding so cards are not touching screen edges */
+        overflow: hidden; /* Prevent overflow */
+    }
+
+    /* Ensure each flip card takes up its maximum width without causing overflow */
+    .flip-card {
+        width: 100%; /* Allow the card to fill available space */
+        max-width: 300px; /* Limit maximum card width */
+        height: 200px; /* Set height based on your preference */
+        font-size: 14px; /* Adjust font size on smaller screens */
+        margin: 10px auto; /* Center the card horizontally */
+        position: relative;
+    }
+
+    /* Control the image background and keep aspect ratio */
+    .flip-card .front, .flip-card .back {
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+    }
+
+    /* Text content inside the cards */
+    .flip-card .front p, .flip-card .back p {
+        font-size: 14px;
+        padding: 10px;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 90%; /* Prevent text overflow */
+        word-wrap: break-word; /* Allow text to break within the card */
+    }
+
+    /* Adjust size of the audio container */
+    .audio-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Further adjustments to ensure readability */
+    .flip-card .front p, .flip-card .back p {
+        font-size: 14px;
+        padding: 10px;
+        word-break: break-word; /* Avoid text overflow */
+    }
+
+    .audio-container audio {
+        max-width: 90%; /* Limit audio player width */
+    }
+}
